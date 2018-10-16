@@ -1,24 +1,32 @@
-# README
+[![Build Status](https://travis-ci.org/tkusuki/rails-kusuki.svg?branch=master)](https://travis-ci.org/tkusuki/rails-kusuki)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Refeições KUSUKI
 
-Things you may want to cover:
+Site da Refeições KUSUKI
 
-* Ruby version
+## Requisitos
 
-* System dependencies
+* Ruby 2.5+
+* Docker 1.12+
 
-* Configuration
+## Setup
 
-* Database creation
+```
+git clone git@github.com:tkusuki/rails-kusuki.git
+cd rails-kusuki
 
-* Database initialization
+docker-compose run web rake db:create db:setup
 
-* How to run the test suite
+docker-compose up
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+A aplicação estará disponível em `localhost`
 
-* Deployment instructions
+## Rodando os testes
 
-* ...
+```
+docker-compose run --rm web bash
+
+rspec
+
+```
